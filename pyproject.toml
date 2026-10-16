@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speckle-automate-function"
+version = "0.1.0"
+requires-python = ">=3.13"
+authors = [{ name = "Speckle Systems", email = "hello@speckle.systems" }]
+maintainers = [{ name = "Speckle Systems", email = "hello@speckle.systems" }]
+description = "A Speckle Automate function template using specklepy"
+readme = "README.md"
+license = "Apache-2.0"
+keywords = ["speckle", "automate", "bim", "aec"]
+
+dependencies = [
+    # 2026.9 pre-release (beta — PyPI flags it "may not be stable for
+    # production use") is the first specklepy build that can receive a
+    # 2026.9 connector's bundle-only (parquet) versions at all — 2026.8.1
+    # 404s on them. Pinned to the exact beta build per Speckle's own
+    # migration guidance (https://docs.speckle.systems/next/developers/sdks/
+    # python/breaking-changes) rather than a `>=` range, since this whole
+    # dependency lives pre-1.0 and PRs #502-524 show the bundle spec itself
+    # still moving within the alpha/beta cycle (re-vendored twice in one
+    # week). The `bundle` extra pulls in pyarrow/duckdb, required for
+    # operations.receive3/send3 and everything in specklepy.bundle.
+    "specklepy[bundle]==2026.9.0b3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy==2.4.0",
+    "openpyxl==3.1.5",
+    "pytest==9.1.1",
+    # Read .env in tests/conftest.py. Already present in the resolved tree
+    # (specklepy -> pydantic-settings -> python-dotenv), but declared here
+    # because conftest imports it directly and a transitive dep that
+    # disappears on a dependency bump would break the test suite for a
+    # non-obvious reason. pydantic-settings reads .env into its own settings
+    # model WITHOUT exporting to os.environ, so the test suite cannot pick a
+    # value out of .env just because the SDK also reads that file.
+    "python-dotenv>=1.0",
+    "ruff==0.17.0",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: makes a real live call against the Speckle project configured in .env (excluded by default — run with `pytest tests/ -m integration`)",
+]
+addopts = "-m 'not integration'"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.14"
+extraPaths = ["src"]
+
+[tool.ruff]
+exclude = [".venv", "**/*.yml"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle
+    "F",  # pyflakes
+    "UP", # pyupgrade
+    "D",  # pydocstyle
+    "I",  # isort
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Generated verbatim from the client's spreadsheet — a description is as long
+# as the client wrote it. See scripts/regenerate_acme_reference.py.
+"src/conditioning/acme_reference.py" = ["E501"]
+
+[tool.setuptools]
+# src layout: the `conditioning` package (business logic) lives under src/ and
+# is installed properly via `uv sync` (or `pip install .`). main.py stays at
+# the repo root as a standalone script — it's the orchestrator the Speckle
+# Automate runtime invokes directly (`python main.py run ...`), not part of
+# the package itself.
+package-dir = { "" = "src" }
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
