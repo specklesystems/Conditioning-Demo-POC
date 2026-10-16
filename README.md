@@ -55,7 +55,7 @@ On every triggered version, the function:
 5. Reads **fire rating, wall tag, height, acoustic rating and stud size**
    for each wall. Fire rating and wall tag prefer the wall's own Revit
    parameters (`Fire Rating`, `Type Mark` — verified 2026-09-07 against live
-   Turner models). All Revit parameter reads — including `Function`,
+   ACME models). All Revit parameter reads — including `Function`,
    `Assembly Code`, `Width` and `Unconnected Height` — go through
    `walls._param()`/`_param_double()`, which try both the
    `Parameters.Instance Parameters.<Group>.<Param>` and
@@ -90,7 +90,7 @@ On every triggered version, the function:
      alone cannot guarantee that.
    - **Full** — each Fire/Acoustic slice re-partitioned again by a
      **height band** (short: under 4'; standard: 4' up to 6m/~19'8"; tall:
-     over 6m). This is an **opinionated, unvalidated-against-Turner's-own-
+     over 6m). This is an **opinionated, unvalidated-against-ACME's-own-
      pricing** stand-in for where an interior stud wall typically needs a
      heavier gauge or added bracing — picked to unblock delivery without a
      follow-up call, not measured against this client's numbers. Correct

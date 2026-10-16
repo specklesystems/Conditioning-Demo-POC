@@ -12,7 +12,7 @@ of it. The conditioning runs have been doing exactly this mapping against
 your own models, so rather than starting from a blank page, here is what
 they have inferred so far:
 
-| Model tag | Turner code | Elements | Note |
+| Model tag | ACME code | Elements | Note |
 |-----------|-------------|----------|------|
 | `C1010145` | `C1010.10` | 100 | Interior fixed partitions |
 | `B2010160` | `B2010.10` | 73 | Exterior wall veneer |
@@ -27,7 +27,7 @@ question about your taxonomy rather than a bug, and it is exactly the sort
 of thing worth pinning down in the document you are writing.
 
 Please treat this as a starting point to correct rather than an answer. It
-is derived from what is in the models, not from anything Turner has told us,
+is derived from what is in the models, not from anything ACME has told us,
 and it only covers the codes those models actually contain.
 
 ## What has changed since this morning
@@ -56,9 +56,9 @@ and further by acoustic rating and stud size within those.
 
 ## Two things to be aware of
 
-**"Observed" means we derived it, not that Turner agreed it.** Everything
+**"Observed" means we derived it, not that ACME agreed it.** Everything
 above is read out of the architect's own element type names. It is not a
-Turner classification and should not be treated as one. Where the group
+ACME classification and should not be treated as one. Where the group
 labels carry a letter (A, B, C), that letter is ours — assigned by size, and
 it will change if the model changes.
 
@@ -78,7 +78,7 @@ from the groups.
 
 That is still the gap the key code table closes, so Kevin, your document
 remains the thing that turns this from "what the model appears to say" into
-"what Turner says it is."
+"what ACME says it is."
 
 Happy to walk through any of it on Thursday.
 

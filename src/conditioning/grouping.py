@@ -117,7 +117,7 @@ heights on the Podium model, so using the exact figure would fragment a
 type into dozens of pivot rows. Bucketed into bands, the same objection
 doesn't apply.
 
-No follow-up call was available to confirm Turner's own gauge/bracing
+No follow-up call was available to confirm ACME's own gauge/bracing
 thresholds, so `attributes.height_band()`'s two constants
 (`HEIGHT_BAND_SHORT_MAX_MM` / `HEIGHT_BAND_TALL_MIN_MM`) are a deliberately
 opinionated stand-in — ordinary construction practice, not a number

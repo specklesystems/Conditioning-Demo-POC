@@ -318,7 +318,7 @@ def bucket_height_ft(
 # STC are, a categorical cost driver hiding inside a field that looks
 # continuous.
 #
-# No follow-up call was available to confirm Turner's own thresholds, so
+# No follow-up call was available to confirm ACME's own thresholds, so
 # these are a deliberately OPINIONATED stand-in — ordinary construction
 # practice, not a number measured against this client's pricing — chosen to
 # unblock delivery rather than wait on one. This needs owning explicitly as
@@ -329,7 +329,7 @@ def bucket_height_ft(
 # overwhelming majority of any interiors model), and "tall" above 6m
 # (double-height spaces, cores, atria — where an interior stud wall
 # typically needs a heavier gauge and/or intermediate bracing). Correct
-# these two constants the moment Turner's own thresholds are known; nothing
+# these two constants the moment ACME's own thresholds are known; nothing
 # else in grouping.py needs to change to pick up a different value.
 #
 # A wall with no recorded height returns None, not a default band — same
@@ -344,7 +344,7 @@ def height_band(height_mm: float) -> str | None:
     """Bucket a wall's Unconnected Height into short / standard / tall.
 
     See the module-level comment above for what these bands are, and that
-    they are an owned assumption pending Turner's own confirmation, not a
+    they are an owned assumption pending ACME's own confirmation, not a
     measured fact. Returns None for a wall with no height recorded — see
     bucket_height_ft for the same convention.
     """

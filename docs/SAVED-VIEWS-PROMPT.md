@@ -3,13 +3,13 @@
 Paste the block below into Speckle AI chat on a `Conditioned/All/<model>`
 version. It walks the story in `docs/BEFORE-AFTER-DEMO.md` as a set of saved
 views. The property group name is whatever the automation's *Conditioned Code
-Property Name* input was set to — on the current Turner deployment that is
-`Turner Conditioned UF Code`; substitute if yours differs.
+Property Name* input was set to — on the current ACME deployment that is
+`ACME Conditioned UF Code`; substitute if yours differs.
 
 ---
 
 You are working on the model version currently open. Every object carries a
-property group called **`Turner Conditioned UF Code`** written by a Speckle
+property group called **`ACME Conditioned UF Code`** written by a Speckle
 Automate function that assigns Uniformat Level 4 cost codes. Its keys are:
 
 - `Status` — `existing` | `predicted` | `component` | `not conditioned`
