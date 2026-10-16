@@ -29,7 +29,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "mypy==2.3.1",
+    "mypy==2.4.0",
     "openpyxl==3.1.5",
     "pytest==9.1.1",
     # Read .env in tests/conftest.py. Already present in the resolved tree
@@ -40,7 +40,7 @@ dev = [
     # model WITHOUT exporting to os.environ, so the test suite cannot pick a
     # value out of .env just because the SDK also reads that file.
     "python-dotenv>=1.0",
-    "ruff==0.16.6",
+    "ruff==0.17.0",
 ]
 
 [tool.pytest.ini_options]
