@@ -24,7 +24,7 @@ dependencies = [
     # still moving within the alpha/beta cycle (re-vendored twice in one
     # week). The `bundle` extra pulls in pyarrow/duckdb, required for
     # operations.receive3/send3 and everything in specklepy.bundle.
-    "specklepy[bundle]==2026.9.0b3",
+    "specklepy[bundle]==2026.9.0",
 ]
 
 [project.optional-dependencies]
