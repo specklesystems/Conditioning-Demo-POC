@@ -31,7 +31,7 @@ dependencies = [
 dev = [
     "mypy==2.4.0",
     "openpyxl==3.1.5",
-    "pytest==9.1.1",
+    "pytest==9.2.0",
     # Read .env in tests/conftest.py. Already present in the resolved tree
     # (specklepy -> pydantic-settings -> python-dotenv), but declared here
     # because conftest imports it directly and a transitive dep that
